@@ -1,0 +1,7 @@
+.cards {
+    /* fonts */
+}
+
+.card__list {
+    display: grid;
+}
