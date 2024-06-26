@@ -8,7 +8,7 @@
   
 **Intro**
   
-This project is made so all the elements are displayed correctly on popular screen sizes. We recommend investing more time in completing this project, since it's more difficult than previous ones.  
+This project is named "Around the U.S." for Triple Ten's Software Engineering program in Sprint 3. In this project, I learned how to implement different rules and properties to render multiple resolutuions for mobile devices, tablets, and desktops. 
   
 **Figma**  
   
@@ -16,6 +16,7 @@ This project is made so all the elements are displayed correctly on popular scre
   
 **Images**  
   
-The way you'll do this at work is by exporting images directly from Figma — we recommend doing that to practice more. Don't forget to optimize them [here](https://tinypng.com/), so your project loads faster. 
-  
-Good luck and have fun!
+https://drive.google.com/file/d/1p8qvuCBOwk-eYBTO3mihspfcr1EskC5t/view?usp=sharing
+![alt text](./README.images/Screenshot_26-6-2024_102021_www.figma.com.jpeg)
+![alt text](./README.images/Screenshot_26-6-2024_102042_www.figma.com.jpeg)
+
