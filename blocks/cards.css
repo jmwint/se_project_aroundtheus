@@ -3,15 +3,7 @@
     margin-top: 30px;
 }
 
-.card {
-    display: flex;
-    flex-direction: column;
-    list-style: none;
-    border-radius: 10px;
-    overflow: hidden;
-}
-
-.card__list {
+.cards__list {
     display: grid;
     justify-content: center;
     grid-template-columns: repeat(auto-fit, 282px);
@@ -20,43 +12,3 @@
     margin: 0;
     margin-top: 51px;
 }
-
-.card__image {
-    width: 282px;
-    height: 282px;
-    object-fit: cover;
-}
-
-.card__title {
-    font-family: "Inter", Arial, sans-serif;
-    font-size: 24px;
-    font-weight: 900;
-    line-height: 1.2;
-    text-align: left;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-    overflow: hidden;
-    margin: 0;
-  }
-
-.card__description {
-    display: flex;
-    background-color: white;
-    color: black;
-    padding: 25px 20px 25px 20px;
-    align-items: center;
-    justify-content: space-between;
-}
-
-.card__like-button {
-    display: flex;
-    background: transparent url(../images/like-button.svg) center no-repeat;
-    width: 21px;
-    height: 18px;
-    border-style: none;
-}
-
-.card__like-button:hover {
-    cursor: pointer;
-    opacity: 0.5;
-  }
