@@ -103,7 +103,6 @@
     .profile__title {
       font-size: 22px;
       line-height: 1.2;
-      margin: 0;
       width: 100%;
       text-overflow: ellipsis;
       white-space: nowrap;
@@ -132,7 +131,6 @@
       height: 50px;
       border-radius: 2px;
       margin-top: 20px;
-      margin: 0;
       width: 282px;
       padding-left: 19px;
       padding-right: 19px;
