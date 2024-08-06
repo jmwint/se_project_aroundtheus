@@ -13,6 +13,8 @@ This project is named "Around the U.S." for Triple Ten's Software Engineering pr
 **Figma**  
   
 * [Link to the project on Figma](https://www.figma.com/file/ii4xxsJ0ghevUOcssTlHZv/Sprint-3%3A-Around-the-US?node-id=0%3A1)  
+
+Github: https://github.com/jmwint/se_project_aroundtheus
   
 **Images**  
   

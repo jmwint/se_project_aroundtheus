@@ -17,6 +17,7 @@
     grid-area: button;
     border: 1px solid #ffffff;
     margin: 15px 0px 9px 18px;
+    margin-right: 15px;
 }
 
 .profile__edit-button:hover {
@@ -125,6 +126,7 @@
       padding: 0;
       box-sizing: border-box;
       margin-top: 10px;
+      margin-right: auto;
     }
   
     .profile__add-button {
