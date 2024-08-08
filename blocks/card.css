@@ -22,6 +22,7 @@
     white-space: nowrap;
     overflow: hidden;
     margin: 0;
+    max-width: 220px;
   }
 
 .card__description {
