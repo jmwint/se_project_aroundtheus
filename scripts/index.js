@@ -36,24 +36,18 @@ const profileTitleInput = document.querySelector('#profile-title-input');
 const profileDescriptionInput = document.querySelector('#profile-description-input');
 const profileEditForm = profileEditModal.querySelector('.modal__form');
 const cardListEl = document.querySelector('.cards__list');
-const cardTemplate = document.querySelector('#card-template').textContent.firstElementChild;
-
+const cardTemplate = document.querySelector('#card-template').content.firstElementChild;
 // Functions
 function closePopup() {
         profileEditModal.classList.remove('modal_open');
 }
 
 function getCardElement(cardData) {
-         //clone the template element with all its content and store it in a cardElement variable
          const cardElement = cardTemplate.cloneNode(true);
-         //access the card title and image and store them in variables
          const cardImageEl = cardElement.querySelector('.card__image');
          const cardTitleEl = cardElement.querySelector('.card__title');
-         //set the path to the image to the link field of the object
-         //set the image alt text to the name field of the object
-         //set the card title to the name field of the object, too
+         cardImageEl.src = cardData.link;
          cardTitleEl.textContent = cardData.name;
-         //return the ready HTML element with the filled-in data
          return cardElement;
 }
 
