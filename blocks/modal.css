@@ -91,15 +91,18 @@
 
     .modal__heading {
         margin-bottom: 75px;
+        font-size: 18px;
     }
 
     .modal__container {
         width: 282px;
+        height: 322px;
         padding: 22px;
     }
 
     .modal__button {
         width: 100%;
+        font-size: 14px;
     }
 
     .modal__close {
