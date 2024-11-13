@@ -29,7 +29,7 @@ const initialCards = [
 // Elements
 const profileEditButton = document.querySelector('#profile-edit-button');
 const profileEditModal = document.querySelector('#profile-edit-modal');
-const profileCloseModal = document.querySelector('#profile-close-modal');
+const profileCloseModal = profileEditModal.querySelector('.modal__close');
 const profileTitle = document.querySelector('.profile__title');
 const profileDescription = document.querySelector('.profile__description');
 const profileTitleInput = document.querySelector('#profile-name-input');
@@ -37,9 +37,27 @@ const profileDescriptionInput = document.querySelector('#profile-description-inp
 const profileEditForm = profileEditModal.querySelector('.modal__form');
 const cardListEl = document.querySelector('.cards__list');
 const cardTemplate = document.querySelector('#card-template').content.firstElementChild;
+const addNewCardButton = document.querySelector('.profile__add-button');
+const addCardModal = document.querySelector('#add-card-modal');
+const addCardModalCloseButton = addCardModal.querySelector('.modal__close');
 // Functions
-function closePopup() {
-        profileEditModal.classList.remove('modal_open');
+const nameInput = profileEditForm.querySelector(".modal__input_type_name");
+const jobInput = profileEditForm.querySelector(".modal__input_type_description");
+
+//function openPopup() {
+  //      nameInput.value = profileTitle.textContent;
+    //    jobInput.value = profileDescription.textContent;
+//
+  //      profileEditModal.classList.add('modal_open')
+//}
+
+function openPopup(modal) {
+        modal.classList.add('modal_open')
+}
+
+
+function closePopup(modal) {
+        modal.classList.remove('modal_open');
 }
 
 function getCardElement(cardData) {
@@ -60,14 +78,16 @@ function handleProfileEditSubmit(e) {
         closePopup();
 }
 // Event Listeners
+addNewCardButton.addEventListener('click', () => openPopup(addCardModal));
+addCardModalCloseButton.addEventListener('click', () => closePopup(addCardModal));
+
+
+profileCloseModal.addEventListener('click', () => closePopup(profileEditModal));
 profileEditButton.addEventListener('click', () => {
-        profileTitleInput.value = profileTitle.textContent;
-        profileDescriptionInput.value = profileDescription.textContent;
-        profileEditModal.classList.add('modal_open');
+        nameInput.value = profileTitle.textContent;
+        jobInput.value = profileDescription.textContent;
+        openPopup(profileEditModal);
 });
-
-profileCloseModal.addEventListener('click', closePopup);
-
 profileEditForm.addEventListener('submit', handleProfileEditSubmit);
 
 initialCards.forEach((cardData) => {
