@@ -41,7 +41,7 @@ const addNewCardButton = document.querySelector('.profile__add-button');
 const addCardModal = document.querySelector('#add-card-modal');
 const addCardModalCloseButton = addCardModal.querySelector('.modal__close');
 const addCardFormElement = addCardModal.querySelector('.modal__form');
-const previewImageModal = document.querySelector('.preview__image-modal');
+const previewImageModal = document.querySelector('#preview__image-modal');
 
 // Forms
 const cardsWrap = document.querySelector('.cards__list');
