@@ -90,6 +90,8 @@ function getCardElement(cardData) {
          };
          modalPreviewImg.src = cardData.link;
          modalPreviewImg.alt = cardData.name;
+
+         modalPreviewTitle.textContent = cardData.name;
          openPopup(previewImageModal);
 });
          
