@@ -23,8 +23,9 @@
     box-sizing: border-box;
 }
 
-.modal__container_preview {
+.modal__container-preview {
     background-color: transparent;
+    position: relative;
 }
 
 .modal__preview-img {
