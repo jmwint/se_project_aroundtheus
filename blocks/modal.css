@@ -25,6 +25,8 @@
 
 .modal__container_preview {
     background-color: transparent;
+    max-width: 75vw;
+    max-height: 75vh;
 }
 
 .modal__close {
