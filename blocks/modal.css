@@ -26,11 +26,20 @@
 .modal__container-preview {
     background-color: transparent;
     position: relative;
+    margin: auto;
 }
 
 .modal__preview-img {
     max-width: 75vw;
     max-height: 75vh;
+}
+
+.modal__preview-title {
+    font-weight: 400;
+    font-size: 12px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
 }
 
 .modal__close {
@@ -45,6 +54,7 @@
     background-image: url('../images/close.svg');
     background-repeat: no-repeat;
     background-size: contain;
+    transition: all 0.5s ease-in-out;
 }
 
 .modal__close:hover {
