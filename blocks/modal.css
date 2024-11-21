@@ -8,10 +8,15 @@
     z-index: 999;
     display: none;
     padding: 0 19px;
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 0.3s, opacity 0.3s ease-in;
 }
 
 .modal_open {
     display: flex;
+    visibility: visible;
+    opacity: 1;
 }
 
 .modal__container {
