@@ -94,6 +94,11 @@
     width: 100%;
 }
 
+.modal__error{
+    color: red;
+    position: absolute;
+}
+
 .modal__button {
     background-color: black;
     color: white;

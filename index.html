@@ -37,20 +37,32 @@
         <button class="modal__close" id="profile-close-modal"></button>
         <p class="modal__heading">Edit profile</p>
         <form class="modal__form">
+          <label class="modal__label">
             <input
              class="modal__input modal__input_type_name"
              id="profile-name-input"
              name="name"
              placeholder="Name"
-             type="text" 
+             type="text"
+             minlength="2" 
+             maxlength="40"
+             required
             />
+            <span class="modal__error" id="profile-name-input-error"></span>
+          </label>
+           <label class="modal__label">
             <input
              class="modal__input modal__input_type_description"
              id="profile-description-input"
              name="description"
              placeholder="Description"
              type="text"
+             minlength="2" 
+             maxlength="200"
+             required
              />
+             <span class="modal__error" id="profile-description-input-error"></span>
+           </label>
              <button class="button modal__button" type="submit">Save</button>
             </form>
           </div>
@@ -61,6 +73,7 @@
             <button class="modal__close" id="add-card-form"></button>
             <p class="modal__heading">New Place</p>
             <form class="modal__form">
+             <label class="modal__label">
               <input
                 class="modal__input modal__input_type_title"
                 id="profile-title-input"
@@ -68,6 +81,9 @@
                 placeholder="Title"
                 type="text"
               />
+              <span class="modal__error" id="profile-title-input-error"></span>
+             </label> 
+             <label class="modal__label">
               <input
                 class="modal__input modal__input_type_link"
                 id="profile-link-input"
@@ -75,7 +91,9 @@
                 placeholder="Image Link"
                 type="text"
               />
-              <button class="button modal__button" type="submit">Save</button>
+              <span class="modal__error" id="profile-link-input-error"></span>
+            </label>
+              <button class="button modal__button modal__button_disabled" type="submit" disabled>Save</button>
             </form>
           </div>
         </div>
