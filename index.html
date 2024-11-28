@@ -80,6 +80,9 @@
                 name="title"
                 placeholder="Title"
                 type="text"
+                minlength="2"
+                maxlength="30"
+                required
               />
               <span class="modal__error" id="profile-title-input-error"></span>
              </label> 
@@ -89,7 +92,8 @@
                 id="profile-link-input"
                 name="link"
                 placeholder="Image Link"
-                type="text"
+                type="url"
+                link="required"
               />
               <span class="modal__error" id="profile-link-input-error"></span>
             </label>

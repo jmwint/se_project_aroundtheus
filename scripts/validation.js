@@ -2,17 +2,19 @@
 // pass all the settings on call
 
 function showInputError(formEl, inputEl, { inputErrorClass, errorClass }) {
-    const errorMessageEl = document.querySelector(`#${inputEl.id}-error`);
+    const errorMessageEl = `#${inputEl.id}-error`;
+    const errorElement = formEl.querySelector(errorMessageEl)
     inputEl.classList.add(inputErrorClass);
-    errorMessageEl.textContent = inputEl.validationMessage;
-    errorMessageEl.classList.add(errorClass);
+    errorElement.textContent = inputEl.validationMessage;
+    errorElement.classList.add(errorClass);
 }
 
 function hideInputError(formEl, inputEl, { inputErrorClass, errorClass }) {
-    const errorMessageEl = document.querySelector(`#${inputEl.id}-error`);
+    const errorMessageEl = `#${inputEl.id}-error`;
+    const errorElement = formEl.querySelector(errorMessageEl)
     inputEl.classList.remove(inputErrorClass);
-    errorMessageEl.textContent = '';
-    errorMessageEl.classList.remove(errorClass);
+    errorElement.textContent = '';
+    errorElement.classList.remove(errorClass);
 }
 
 function checkInputValidity(formEl, inputEl, options) {
@@ -36,15 +38,12 @@ function enableButton(submitButton, inactiveButtonClass) {
     submitButton.disabled = false;
 }
 
-function toggleButtonState(inputEls, submitButton, {inactiveButtonClass}) {
-    if(hasInvalidInput(inputEls)) {
-        submitButton.classList.add(inactiveButtonClass);
-    submitButton.disabled = true;
-    submitButton.disabled = false;
-    return
+function toggleButtonState(inputEls, submitButton, { inactiveButtonClass }) {
+    if (hasInvalidInput(inputEls)) {
+        disableButton(submitButton, inactiveButtonClass);
+    } else {
+        enableButton(submitButton, inactiveButtonClass);
     }
-        submitButton.classList.remove(inactiveButtonClass);
-        submitButton.disabled = false;
 }
 
 function setEventListeners(formEl, options) {
