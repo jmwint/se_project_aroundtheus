@@ -70,6 +70,28 @@ function enableValidation(options) {
     });
 }
 
+function handleOverlayClick(event) {
+    if (event.target.classList.contains('modal_open')) {
+        closePopup(event.target);
+    }
+}
+
+const modals = document.querySelectorAll('.modal');
+modals.forEach((modal) => {
+    modal.addEventListener('click', handleOverlayClick);
+});
+
+function handleEscKey(event) {
+    if (event.key === 'Escape') {
+        const openModal = document.querySelector('.modal_open');
+        if (openModal) {
+            closePopup(openModal);
+        }
+    }
+}
+
+document.addEventListener('keydown', handleEscKey);
+
 const config = {
     formSelector: ".modal__form",
     inputSelector: ".modal__input",

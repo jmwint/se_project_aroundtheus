@@ -94,9 +94,17 @@
     width: 100%;
 }
 
+.modal__label {
+    position: relative;
+    display: block;
+}
+
 .modal__error{
     color: red;
     position: absolute;
+    font-size: 12px;
+    line-height: 14.52px;
+    top: 100%;
 }
 
 .modal__button {
@@ -109,6 +117,11 @@
     cursor: pointer;
     font-size: 18px;
 }
+
+.modal__button:disabled {
+    background-color: #e0e0e0;
+    cursor: not-allowed;
+  }
 
 .modal__button:hover {
     opacity: 0.6;
