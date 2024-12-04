@@ -61,11 +61,13 @@ function renderCard(cardData, wrapper) {
 
 function openPopup(modal) {
         modal.classList.add('modal_open')
+        document.addEventListener('keydown', handleEscKey);
 }
 
 
 function closePopup(modal) {
         modal.classList.remove('modal_open');
+        document.removeEventListener('keydown', handleEscKey);
 }
 
 function getCardElement(cardData) {
@@ -137,8 +139,6 @@ function handleOverlayClick(event) {
             }
         }
     }
-    
-    document.addEventListener('keydown', handleEscKey);
     
 // Event Listeners
 addNewCardButton.addEventListener('click', () => openPopup(addCardModal));
