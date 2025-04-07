@@ -1,4 +1,4 @@
-import Card from "./Card.js";
+import Card from "../components/Card.js";
 
 const initialCards = [
 {
@@ -31,9 +31,8 @@ const cardData = {
         name: "Yosemite Valley",
         link: "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/around-project/yosemite.jpg",
 }
-
-const card = new Card(cardData, "#card-tempelate");
-card.getView()
+const card = new Card(cardData, "#card-template", handleImageClick);
+card.generateCard();
 
 // Elements
 const profileEditButton = document.querySelector('#profile-edit-button');
@@ -64,7 +63,7 @@ const modalPreviewTitle = previewImageModal.querySelector('.modal__preview-title
 
 // Functions
 function renderCard(cardData, wrapper) {
-        const cardElement = getCardElement(cardData);
+        const cardElement = createCard(cardData);
         wrapper.prepend(cardElement);
 }
 
@@ -79,38 +78,17 @@ function closePopup(modal) {
         document.removeEventListener('keydown', handleEscKey);
 }
 
-function getCardElement(cardData) {
-         const cardElement = cardTemplate.cloneNode(true);
-         const cardImageEl = cardElement.querySelector('.card__image');
-         const cardTitleEl = cardElement.querySelector('.card__title');
-         const likeButton = cardElement.querySelector('.card__like-button');
-         const deleteButton = cardElement.querySelector('.card__delete-button');
+function handleImageClick({ name, link }) {
+        modalPreviewImg.src = link;
+        modalPreviewImg.alt = name;
+        modalPreviewTitle.textContent = name;
+        openPopup(previewImageModal);
+      }
 
-         deleteButton.addEventListener('click', () => {
-                cardElement.remove();
-         });
-
-         likeButton.addEventListener('click', () => {
-                likeButton.classList.toggle('card__like-button_active');
-        });
-
-        cardImageEl.addEventListener("click", () => {
-                const cardData = {
-                  link: cardImageEl.src,
-                  name: cardImageEl.alt,
-                };
-                modalPreviewImg.src = cardData.link;
-                modalPreviewImg.alt = cardData.name;
-            
-                modalPreviewTitle.textContent = cardData.name;
-                openPopup(previewImageModal);
-              });
-         
-         cardImageEl.src = cardData.link;
-         cardImageEl.alt = cardData.name;
-         cardTitleEl.textContent = cardData.name;
-         return cardElement;
-}
+function createCard(cardData) {
+        const card = new Card(cardData, '#card-template', handleImageClick);
+        return card.generateCard();
+      }
 
 // Event Handlers
 function handleProfileEditSubmit(e) {
