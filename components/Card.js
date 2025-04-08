@@ -48,6 +48,7 @@ export default class Card {
       this._cardImage.alt = this._name;
   
       this._setEventListeners();
+      
       return this._element;
     }
   }

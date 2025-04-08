@@ -1,4 +1,6 @@
 import Card from "../components/Card.js";
+import FormValidator from '../components/FormValidator.js';
+
 
 const initialCards = [
 {
@@ -102,8 +104,9 @@ function handleAddCardFormSubmit(e) {
         e.preventDefault();
         const name = cardTitleInput.value;
         const link = cardLinkInput.value;
-        renderCard({name, link}, cardsWrap);
+        renderCard({ name, link }, cardsWrap);
         e.target.reset();
+        addCardFormValidator.resetValidation();
         closePopup(addCardModal);
 }
 
@@ -141,6 +144,20 @@ profileEditButton.addEventListener('click', () => {
         openPopup(profileEditModal);
 });
 profileEditForm.addEventListener('submit', handleProfileEditSubmit);
+
+const validationSettings = {
+        formSelector: ".modal__form",
+        inputSelector: ".modal__input",
+        submitButtonSelector: ".modal__button",
+        inactiveButtonClass: "modal__button_disabled",
+        inputErrorClass: "modal__input_type_error",
+        errorClass: "modal__error_visible"
+      };
+const profileFormValidator = new FormValidator(validationSettings, profileEditForm);
+const addCardFormValidator = new FormValidator(validationSettings, addCardFormElement);
+profileFormValidator.enableValidation();
+addCardFormValidator.enableValidation();
+
 addCardFormElement.addEventListener('submit', handleAddCardFormSubmit);
 
 initialCards.forEach((cardData) => renderCard(cardData, cardsWrap));
